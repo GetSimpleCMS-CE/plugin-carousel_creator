@@ -1,71 +1,118 @@
 <?php
 
-$thisfile=basename(__FILE__, ".php");
-if (!i18n_merge('carouselCreator')) i18n_merge('carouselCreator', 'en_US');
+$thisfile = basename(__FILE__, ".php");
 
 
-# register plugin
 register_plugin(
-	$thisfile, //Plugin id
-	'Carousel Creator', 	//Plugin name
-	'2.0', 		//Plugin version
-	'Mateusz Skrzypczak',  //Plugin author
-	'https://multicolor.stargar.pl/', //author website
-	'Create carousel with easy creator', //Plugin description
-	'pages', //page type - on which admin tab to display
-	'createCarousel'  //main function (administration)
+  $thisfile, //Plugin id
+  'carouselCreator',   //Plugin name
+  '3.0',     //Plugin version
+  'Multicolor',  //Plugin author
+  'https://paypal.me/multicol0r', //author website
+  'Easy to use Carousel Creator', //Plugin description
+  'pages', //page type - on which admin tab to display
+  'carouselCreator'  //main function (administration)
 );
+
+
+add_action('pages-sidebar', 'createSideMenu', array($thisfile, 'Carousel Creator 🎠'));
+
+
+require(GSPLUGINPATH . 'carouselCreator/class/carouselCreator.class.php');
+
+$cc = new Creator();
+
+
+function carouselCreator()
+{
+
+  global $SITEURL;
+  global $GSADMIN;
+
+  echo '<style>@import url("' . $SITEURL . 'plugins/carouselCreator/css/backend.css");</style>';
+
+  echo '<div class="carCreator">';
+
+  if (isset($_GET['addnew'])) {
+
+    include(GSPLUGINPATH . 'carouselCreator/php/formCarousel.inc.php');
+  } elseif (isset($_GET['edit'])) {
+
+    include(GSPLUGINPATH . 'carouselCreator/php/formCarousel.inc.php');
+  } elseif (isset($_GET['migrator'])) {
+
+    include(GSPLUGINPATH . 'carouselCreator/php/migrate.inc.php');
+  } else {
+
+    include(GSPLUGINPATH . 'carouselCreator/php/list.inc.php');
+  }
+
+
+  echo '<div class="sponsor">
+      
+<p class="lead">Buy me ☕ if you want to see new plugins :) </p>
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=TW6PXVCTM5A72">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"  />
+</a>
+
+</div>
+</div>
+';
+
  
-# activate filter 
-add_action('theme-footer','carouselRun'); 
-add_action('theme-footer','carouselConfig');
+  if (isset($_POST['changeURL'])) {
+    global $cc;
+    $cc->changeUrl();
+  };
 
-add_action('footer','carouselButton');
 
-register_script('swipejs', $SITEURL.'plugins/carouselCreator/js/swipe.min.js', '0.1', TRUE);
- queue_script('swipejs',GSFRONT); 
+  if (isset($_GET['delete'])) {
+
+    global $cc;
+    $cc->deleteFile();
+  }
+
+  if (isset($_POST['submit'])) {
+
+    global $cc;
+    $cc->createFile();
+  };
+}
+
+add_action('theme-header', 'siteHead');
+
+function siteHead()
+{
+  global $SITEURL;
+  echo '<link rel="stylesheet" href="' . $SITEURL . 'plugins/carouselCreator/css/carousel.css">';
+}
+
  
-register_script('carouselCKE', $SITEURL.'admin/template/js/ckeditor/ckeditor.js', '1.1', FALSE);
-queue_script('carouselCKE',GSBACK); 
-
-
-register_style('carouselstyle', $SITEURL.'plugins/carouselCreator/css/carousel.css', GSVERSION, 'screen');
-queue_style('carouselstyle',GSFRONT); 
-
-register_style('carouselstyleback', $SITEURL.'plugins/carouselCreator/css/carouselback.css', GSVERSION, 'screen');
-queue_style('carouselstyleback',GSBACK); 
- 
-# add a link in the admin tab 'theme'
-add_action('pages-sidebar','createSideMenu',[$thisfile, i18n_r('carouselCreator/TITLE1').' 🎠', 'carouselcreator']);
-add_action('plugins-sidebar','createSideMenu',[$thisfile, i18n_r('carouselCreator/TITLE2').' 🎠', 'carouselsettings']);
-
-
-
-function carouselButton(){
-include('carouselCreator/addBtn.php');
+add_action('theme-header', 'pageBegin');
+function pageBegin()
+{
+  global $content;
+  $newcontent = preg_replace_callback(
+    '/\\[% carousel=(.*) %\\]/i',
+    'runCarouselShortcode',
+    $content
+  );
+  $content = $newcontent;
 };
-
-
  
+//carouselShortcode 
 
-function createCarousel(){
-
-	if(isset($_GET['carouselcreator'])){
-include('carouselCreator/createCarousel.php');
-}elseif(isset($_GET['carouselsettings'])){
-include('carouselCreator/settingsCarousel.php');
+function runCarouselShortcode($item)
+{
+  global $cc;
+  return $cc->shortCode($item);
 }
 
-}
+//carousel 
 
-
-function carouselRun(){
-	include('carouselCreator/runCarousel.php');
+function runCarousel($item)
+{
+  global $cc;
+  return $cc->run($item);
 };
-
-function carouselConfig(){
-	include('carouselCreator/carouselConfig.php');
-}
-
-
-?>
