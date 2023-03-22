@@ -6,7 +6,7 @@ $thisfile = basename(__FILE__, ".php");
 register_plugin(
   $thisfile, //Plugin id
   'carouselCreator',   //Plugin name
-  '3.0',     //Plugin version
+  '3.0.1',     //Plugin version
   'Multicolor',  //Plugin author
   'https://paypal.me/multicol0r', //author website
   'Easy to use Carousel Creator', //Plugin description

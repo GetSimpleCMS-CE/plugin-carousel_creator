@@ -101,9 +101,12 @@ class Creator
             };
         };
 
+        $carousel .= '</div>';
+        $carousel .= '</div>';
+
         if ($resultMe->settings[0]->arrow !== '2') {
 
-            $carousel .=  '</div></div><button class="slider-prev" ><img src="' . $SITEURL . 'plugins/carouselCreator/images/left' .
+            $carousel .=  '<button class="slider-prev" ><img src="' . $SITEURL . 'plugins/carouselCreator/images/left' .
                 $resultMe->settings[0]->arrow . '.svg"></button>';
             $carousel .=  '<button class="slider-next" >
 <img src="' . $SITEURL . 'plugins/carouselCreator/images/right' . $resultMe->settings[0]->arrow . '.svg"></button>
@@ -111,6 +114,7 @@ class Creator
         };
 
 
+     
         $carousel .= '</div>';
 
 
@@ -190,9 +194,13 @@ prevBtn.onclick = mySwipe" . $this->name . ".prev;
             };
         };
 
+
+        $carousel .= '</div>';
+        $carousel .= '</div>';
+
         if ($resultMe->settings[0]->arrow !== '2') {
 
-            $carousel .=  '</div></div><button class="slider-prev" ><img src="' . $SITEURL . 'plugins/carouselCreator/images/left' .
+            $carousel .=  '<button class="slider-prev" ><img src="' . $SITEURL . 'plugins/carouselCreator/images/left' .
                 $resultMe->settings[0]->arrow . '.svg"></button>';
             $carousel .=  '<button class="slider-next" >
 <img src="' . $SITEURL . 'plugins/carouselCreator/images/right' . $resultMe->settings[0]->arrow . '.svg"></button>
@@ -200,6 +208,7 @@ prevBtn.onclick = mySwipe" . $this->name . ".prev;
         };
 
 
+    
         $carousel .= '</div>';
 
 
