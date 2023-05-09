@@ -1,0 +1,55 @@
+<?php
+
+$i18n = array(
+
+	"LANG_Title"			=>	"carouselCreator",
+	"LANG_Description"		=>	"Easy to use Carousel Creator",
+	"LANG_Settings"			=>	"Carousel Creator 🎠",
+
+	"LANG_Carousel_Creator_List" =>	"Carousel Creator List",
+	"LANG_Add_New"			=>	"Add New",
+	"LANG_Migrate"			=>	"Migrate",
+	"LANG_Name"				=>	"Name",
+	"LANG_Shortcode"		=>	"Shortcode",
+	"LANG_Edit"				=>	"Edit",
+	"LANG_Delete"			=>	"Delete",
+
+	"LANG_Migrate_CC"		=>	"Migrate Carousel Creator",
+	"LANG_Old_URL"			=>	"Old URL",
+	"LANG_New_URL"			=>	"New URL",
+	"LANG_Update_URL"		=>	"Update Carousel URL",
+
+	"LANG_Item_Manager"		=>	"Slider Item Manager",
+	"LANG_Carousel_Settings" =>	"Carousel Settings",
+	"LANG_How_to"			=>	"How to use?",
+	"LANG_Add_slide"		=>	"Add new slide to your carousel with button \"Add Slide +\".",
+	"LANG_Add_photos"		=>	"Add photos and content for each slide.",
+	"LANG_Configure_settings"	=>	"Configure settings for carousel.",
+	"LANG_Add_the_following" =>	"Add the following to your template",
+	"LANG_Use_shortcode"	=>	"Or you can use the shortcode and paste into ckEditor",
+
+	"LANG_Carousel_Item_Manager" =>	"Carousel Item Manager",
+	"LANG_Without_spaces"	=>	"Carousel title without spaces or special characters",
+	"LANG_Add_Slide_btn"	=>	"Add Slide",
+	"LANG_Save_Carousel_btn" =>	"Save Carousel",
+	"LANG_Save_Settings_btn" =>	"Save Settings",
+	"LANG_Time_between_slides" =>	"Time between slides (in milliseconds), if 0 autoplay disabled.",
+	"LANG_Transition_speed"	=>	"Transition speed (in milliseconds)",
+	"LANG_Darkens_the_image" =>	"Darkens the image behind text ( 0 - 1 example: 0.2)",
+	"LANG_Carousel_Width"	=>	"Carousel Width(example 800px or 100% or 100vw)",
+	"LANG_Carousel_Height"	=>	"Carousel Height (example 450px or 20% or 20vh)",
+	"LANG_Arrow_Styles"		=>	"Arrow Styles",
+	"LANG_Style_1"			=>	"Style 1",
+	"LANG_Style_2"			=>	"Style 2",
+	"LANG_No_Arrows"		=>	"No Arrows",
+	"LANG_Choose_Photo"		=>	"Choose Photo",
+	"LANG_Edit_Content"		=>	"Edit Content",
+	"LANG_Slide_Title"		=>	"Slide Title",
+	"LANG_Image"			=>	"Image",
+	"LANG_Slide_Item"		=>	"Elemento deslizante",
+	"LANG_Button_Name"		=>	"Button Name",
+	"LANG_Without_Button"	=>	"Without Button",
+	"LANG_Style_Slider" => "Slider Style",
+	"LANG_PayPal"			=>	"Support my work via PayPal :) Thanks!  ☕",
+
+);

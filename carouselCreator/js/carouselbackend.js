@@ -98,18 +98,12 @@ document
 
     })
 
-
-
-
     document.querySelector('.helpcontent').style.display="none";
     document.querySelector('.config').style.display="none";
    
-
-
     const options = document.querySelector('.options');
 
     options.querySelector('.help').addEventListener('click',(z)=>{
-
         z.preventDefault();
 
         document.querySelector('.config').style.display="none";
@@ -117,43 +111,26 @@ document
 
         document.querySelector('.helpcontent').style.display="block";
         document.querySelector('#sliderlist').style.display="none";
+	});
 
-      });
+	options.querySelector('.settings').addEventListener('click',(z)=>{
+		z.preventDefault();
 
+		document.querySelector('.config').style.display="block";
+		document.querySelector('.uploader').style.display="none";
 
-      options.querySelector('.settings').addEventListener('click',(z)=>{
+		document.querySelector('.helpcontent').style.display="none";
+		document.querySelector('#sliderlist').style.display="none";
+	});
 
-z.preventDefault();
+	options.querySelector('.sliderbtn').addEventListener('click',(z)=>{
+		z.preventDefault();
 
-document.querySelector('.config').style.display="block";
-document.querySelector('.uploader').style.display="none";
+		document.querySelector('.config').style.display="none";
+		document.querySelector('.uploader').style.display="block";
 
-document.querySelector('.helpcontent').style.display="none";
-document.querySelector('#sliderlist').style.display="none";
-
-});
-
-
-options.querySelector('.sliderbtn').addEventListener('click',(z)=>{
-
-z.preventDefault();
-
-document.querySelector('.config').style.display="none";
-document.querySelector('.uploader').style.display="block";
-
-document.querySelector('.helpcontent').style.display="none";
-document.querySelector('#sliderlist').style.display="block";
-
-});
-
+		document.querySelector('.helpcontent').style.display="none";
+		document.querySelector('#sliderlist').style.display="block";
+	});
 
 document.querySelector('form').setAttribute('enctype','multipart/form-data');
-
-
-
-
-
-
-
-
-
