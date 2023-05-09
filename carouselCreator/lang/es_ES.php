@@ -49,7 +49,7 @@ $i18n = array (
 	"LANG_Slide_Item"		=>	"Elemento deslizante",
 	"LANG_Button_Name"		=>	"Nombre del Botón",
 	"LANG_Without_Button"	=>	"Sin Botón",
-	"LANG_Style_Slider" => "estilo deslizante",
+	"LANG_Style_Slider" 	=>	"Estilo de Deslizante",
 
 	"LANG_PayPal"			=>	"¿Te gusta usar mi plugin? Cómprame un ☕?",
 	
