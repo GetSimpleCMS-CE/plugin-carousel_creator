@@ -114,7 +114,7 @@ class Creator
             $carousel .=  '</div></div><button class="slider-prev" ><img src="' . $SITEURL . 'plugins/carouselCreator/images/left' .
                 $resultMe->settings[0]->arrow . '.svg" width="48" height="48" title="shift left" alt="shift left"></button>';
             $carousel .=  '<button class="slider-next" >
-			<img src="' . $SITEURL . 'plugins/carouselCreator/images/right' . $resultMe->settings[0]->arrow . '.svg" width="48" height="48" title="shift left" alt="shift left"></button>
+			<img src="' . $SITEURL . 'plugins/carouselCreator/images/right' . $resultMe->settings[0]->arrow . '.svg" width="48" height="48" title="shift right" alt="shift right"></button>
 			';
         };
 
@@ -210,7 +210,7 @@ class Creator
             $carousel .=  '</div></div><button class="slider-prev" ><img src="' . $SITEURL . 'plugins/carouselCreator/images/left' .
                 $resultMe->settings[0]->arrow . '.svg" width="48" height="48" title="shift left" alt="shift left"></button>';
             $carousel .=  '<button class="slider-next" >
-			<img src="' . $SITEURL . 'plugins/carouselCreator/images/right' . $resultMe->settings[0]->arrow . '.svg" width="48" height="48" title="shift left" alt="shift left"></button>
+			<img src="' . $SITEURL . 'plugins/carouselCreator/images/right' . $resultMe->settings[0]->arrow . '.svg" width="48" height="48" title="shift right" alt="shift right"></button>
 			';
         };
 
